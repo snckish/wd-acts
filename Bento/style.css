@@ -193,6 +193,11 @@ body {
     color: var(--blue);
 }
 
+/*--square-tile--*/
+.sq {
+    width: calc(var(--u) * 2 + 0.5rem);
+}
+
 /*--levelcell--*/
 .dcell {
     height: 100%;
