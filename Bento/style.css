@@ -11,7 +11,7 @@ body {
     --text: #f2f5f9;
     --muted: #8a93a3;
     --blue: #2b86ff;
-    --u: max(100px, calc((100vh - 3rem) / 5));
+    --u: clamp(100px, calc((100vh - 3rem) / 5), 150px);
 }
 
 /* --tls-- */
@@ -48,15 +48,15 @@ body {
 
 /* --tlh-- */
 .u1 {
-    height: var(--u);
+    min-height: var(--u);
 }
 
 .u2 {
-    height: calc(var(--u) * 2 + 0.5rem);
+    min-height: calc(var(--u) * 2 + 0.5rem);
 }
 
 .u3 {
-    height: calc(var(--u) * 3 + 1rem);
+    min-height: calc(var(--u) * 3 + 1rem);
 }
 
 /* --content inside-- */
@@ -193,9 +193,15 @@ body {
     color: var(--blue);
 }
 
+.col-fit {
+    min-width: 0;
+}
+
 /*--square-tile--*/
 .sq {
     width: calc(var(--u) * 2 + 0.5rem);
+    height: calc(var(--u) * 2 + 0.5rem);
+    max-width: 100%;
 }
 
 /*--levelcell--*/
