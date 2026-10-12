@@ -42,6 +42,10 @@ body {
     margin: 0;
 }
 
+.label i {
+    margin-right: .35rem;
+}
+
 /* --tlh-- */
 .u1 {
     height: var(--u);
@@ -97,6 +101,7 @@ body {
     font-variant-numeric: tabular-nums;
 }
 
+/*--rank-badge--*/
 .rank {
     display: inline-block;
     font-size: .7rem;
@@ -123,6 +128,7 @@ body {
     background: #7a4fd6;
 }
 
+/*--vicodin--*/
 .pill {
     display: inline-block;
     font-size: .8rem;
@@ -130,4 +136,82 @@ body {
     margin: 0 .25rem .25rem 0;
     border-radius: 999px;
     background: rgba(255, 255, 255, .12);
+}
+
+/*--p-bar--*/
+.progress {
+    background: var(--line);
+}
+
+.progress-bar {
+    background: var(--blue);
+}
+
+/*--weekly-unused
+.bar {
+    background: var(--blue);
+    border-radius: 4px;
+}--*/
+
+/*--cell-- */
+.scell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+/* no lines on the outer edges */
+.scell:nth-child(3n) {
+    border-right: 0;
+}
+
+.scell:nth-child(n+7) {
+    border-bottom: 0;
+}
+
+.scell .n {
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.1;
+    font-variant-numeric: tabular-nums;
+}
+
+.scell .t {
+    font-size: .65rem;
+    color: var(--muted);
+}
+
+.scell.center {
+    background: rgba(43, 134, 255, .18);
+}
+
+.scell.center .n {
+    color: var(--blue);
+}
+
+/*--levelcell--*/
+.dcell {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: .4rem .7rem;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, .05);
+}
+
+.dcell .t {
+    font-size: .7rem;
+    color: var(--muted);
+}
+
+.dcell .n {
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.1;
+    font-variant-numeric: tabular-nums;
 }

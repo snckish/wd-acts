@@ -7,6 +7,7 @@
     <title>Sudoku Stats</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -19,7 +20,7 @@
                 <div class="row g-2">
                     <div class="col-12">
                         <div class="tile accent u3">
-                            <p class="label">Streak</p>
+                            <p class="label"><i class="bi bi-fire"></i>Streak</p>
                             <p class="value value-xl">13</p>
                             <p class="sub mb-2">on Hard</p>
 
@@ -44,8 +45,8 @@
                     <div class="col-12">
                         <div class="tile u1">
                             <div class="d-flex justify-content-between align-items-start">
-                                <p class="label">Best time (Fast)</p>
-                                <span class="rank r1">TOP 1%</span>    
+                                <p class="label"><i class="bi bi-stopwatch"></i>Best time (Fast)</p>
+                                <span class="rank r1">TOP 1%</span>
                             </div>
                             <p class="value">00:19</p>
                         </div>
@@ -58,7 +59,7 @@
                 <div class="row g-2">
                     <div class="col-12">
                         <div class="tile dark u2">
-                            <p class="label">Puzzles solved</p>
+                            <p class="label"><i class="bi bi-grid-3x3-gap-fill"></i>Puzzles solved</p>
                             <p class="value value-xl">67</p>
                             <p class="sub mb-2">Classic Mode</p>
                             <span class="pill">Hard 67</span>
@@ -68,38 +69,43 @@
                         </div>
                     </div>
 
-                    <div class="col-12 col-sm-7">
-                        <div class="tile u2">
-                            <div class="d-flex justify-content-between align-items-start">
-                                <p class="label">16×16 record</p>  
-                                <span class="rank r10">TOP 10%</span>
+                    <!--CL-->
+                    <div class="col-12 col-sm-auto">
+                        <div class="tile sq u2 p-0">
+                            <div class="row row-cols-3 g-0 h-100">
+                                <div class="col scell"><span class="n">78</span><span class="t">played</span></div>
+                                <div class="col scell"><span class="n">67</span><span class="t">won</span></div>
+                                <div class="col scell"><span class="n">86%</span><span class="t">win rate</span></div>
+
+                                <div class="col scell"><span class="n">13</span><span class="t">streak</span></div>
+                                <div class="col scell center"><span class="n">00:19</span><span class="t">best time</span></div>
+                                <div class="col scell"><span class="n">21</span><span class="t">best streak</span></div>
+
+                                <div class="col scell"><span class="n">16</span><span class="t">perfect</span></div>
+                                <div class="col scell"><span class="n">02:41</span><span class="t">avg time</span></div>
+                                <div class="col scell"><span class="n">53</span><span class="t">this week</span></div>
                             </div>
-                            <p class="value claue-xl">14:29</p>
-                            <p class="sub">4 games won (Bes streak: 2)</p> 
                         </div>
                     </div>
 
-                    <div class="col-12 col-sm-5">
-                        <div class="tile u2">
-                            <p class="label mb-1"> Best Time by Difficulty Level</p>
-                            <div class="row g-0 stat-row">
-                                <div class="col-6">Fast</div>
-                                <div class="col-6 text-end num">00:19</div>
-                            </div>
+                    <!--CR-->
+                    <div class="col" style="min-width:0">
+                        <div class="tile u2 d-flex flex-column">
+                            <p class="label mb-2"><i class="bi bi-stopwatch"></i>Best time by level</p>
 
-                            <div class="row g-0 stat-row">
-                                <div class="col-6">Hard</div>
-                                <div class="col-6 text-end">01:27</div>
-                            </div>
-
-                            <div class="row g-0 stat-row">
-                                <div class="col-6">Expert</div>
-                                <div class="col-6 text-end">02:52</div>
-                            </div>
-
-                            <div class="row g-0 stat-row">
-                                <div class="col-6">Extreme</div>
-                                <div class="col-6 text-end">03:00</div>
+                            <div class="row row-cols-2 g-2 flex-grow-1">
+                                <div class="col">
+                                    <div class="dcell"><span class="t">Fast</span><span class="n">00:19</span></div>
+                                </div>
+                                <div class="col">
+                                    <div class="dcell"><span class="t">Hard</span><span class="n">01:27</span></div>
+                                </div>
+                                <div class="col">
+                                    <div class="dcell"><span class="t">Expert</span><span class="n">02:52</span></div>
+                                </div>
+                                <div class="col">
+                                    <div class="dcell"><span class="t">Extreme</span><span class="n">03:00</span></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -111,7 +117,7 @@
                 <div class="row g-2">
                     <div class="col-12">
                         <div class="tile u2">
-                            <p class="label">Perfect Wins</p>
+                            <p class="label"><i class="bi bi-stars"></i>Perfect Wins</p>
                             <p class="value">16</p>
                             <div class="row g-0 stat-row mt-2">
                                 <div class="col-6 muted">Hard</div>
@@ -121,12 +127,23 @@
                                 <div class="col-6 muted">Fast</div>
                                 <div class="col-6 text-end num">7</div>
                             </div>
+                            <div class="row g-0 stat-row">
+                                <div class="col-6 muted">Fast</div>
+                                <div class="col-6 text-end num">7</div>
+                            </div>
+                            <div class="row g-0 stat-row">
+                                <div class="col-6 muted">Fast</div>
+                                <div class="col-6 text-end num">7</div>
+                            </div>
+                            <div class="progress mt-3" style="height: 8px;">
+                                <div class="progress-bar" style="width: 24%;"></div>
+                            </div>
                         </div>
                     </div>
 
                     <div class="col-12">
                         <div class="tile u1">
-                            <p class="label">Battle</p>
+                            <p class="label"><i class="bi bi-trophy-fill"></i>Battle</p>
                             <p class="value">48 Passport</p>
                         </div>
                     </div>
@@ -148,7 +165,7 @@
             </div>
             <div class="col-12 col-md-4">
                 <div class="tile u1">
-                    <p class="label">Daily challenge</p>
+                    <p class="label"><i class="bi bi-calendar-check"></i>Daily challenge</p>
                     <p class="value">540,680 <span class="sub">players</span></p>
                 </div>
             </div>
