@@ -12,166 +12,288 @@
 </head>
 
 <body>
-    <div class="container py-2">
-        <div class="row g-2">
+    <div class="container py-2 min-vh-100 d-flex flex-column">
+        <div class="row g-2 flex-grow-1">
 
             <!--L(t-b)-->
-            <div class="col-12 col-md-6 col-xl-3">
-                <div class="row g-2">
-                    <div class="col-12">
-                        <div class="tile accent u3">
+            <div class="col-12 col-md-6 col-xl-3 d-flex">
+                <div class="row g-2 flex-grow-1 flex-column flex-nowrap">
+                    <div class="col-12 d-flex flex-grow-1">
+                        <div class="tile accent d-flex flex-column w-100">
                             <p class="label"><i class="bi bi-fire"></i>Streak</p>
                             <p class="value value-xl">13</p>
-                            <p class="sub mb-2">on Hard</p>
+                            <p class="sub mb-2">wins in a row</p>
 
-                            <div class="row g-0 stat-row">
-                                <div class="col-6 muted">Fast</div>
-                                <div class="col-6 text-end num">7</div>
+                            <div class="row g-0 stat-row lv-fast">
+                                <div class="col-6 muted"><span class="legend-dot"></span>Fast</div>
+                                <div class="col-6 text-end num">5</div>
+                            </div>
+                            <div class="row g-0 stat-row lv-hard">
+                                <div class="col-6 muted"><span class="legend-dot"></span>Hard</div>
+                                <div class="col-6 text-end num">4</div>
+                            </div>
+                            <div class="row g-0 stat-row lv-expert">
+                                <div class="col-6 muted"><span class="legend-dot"></span>Expert</div>
+                                <div class="col-6 text-end num">3</div>
+                            </div>
+                            <div class="row g-0 stat-row lv-16x16">
+                                <div class="col-6 muted"><span class="legend-dot"></span>16x16</div>
+                                <div class="col-6 text-end num">1</div>
                             </div>
 
-                            <div class="row g-0 stat-row">
-                                <div class="col-6 muted">Fast</div>
-                                <div class="col-6 text-end num">7</div>
-                            </div>
-
-                            <div class="row g-0 stat-row">
-                                <div class="col-6 muted">Fast</div>
-                                <div class="col-6 text-end num">7</div>
+                            <div class="mt-auto pt-3">
+                                <p class="sub mb-2">This week · 7 / 7 days</p>
+                                <div class="row g-0 text-center">
+                                    <div class="col"><span class="dot on"></span><span class="day">M</span></div>
+                                    <div class="col"><span class="dot on"></span><span class="day">T</span></div>
+                                    <div class="col"><span class="dot on"></span><span class="day">W</span></div>
+                                    <div class="col"><span class="dot on"></span><span class="day">T</span></div>
+                                    <div class="col"><span class="dot on"></span><span class="day">F</span></div>
+                                    <div class="col"><span class="dot on"></span><span class="day">S</span></div>
+                                    <div class="col"><span class="dot on"></span><span class="day">S</span></div>
+                                </div>
                             </div>
                         </div>
 
                     </div>
 
                     <div class="col-12">
-                        <div class="tile u1">
-                            <div class="d-flex justify-content-between align-items-start">
-                                <p class="label"><i class="bi bi-stopwatch"></i>Best time (Fast)</p>
-                                <span class="rank r1">TOP 1%</span>
-                            </div>
-                            <p class="value">00:19</p>
+                        <div class="tile profile-tile">
+                            <img src="assets/img/spfp.jpg" alt="sudoku account" class="s-pfp" />
                         </div>
                     </div>
                 </div>
             </div>
 
             <!--C-->
-            <div class="col-12 col-xl-6 order-first order-xl-0">
-                <div class="row g-2">
-                    <div class="col-12">
-                        <div class="tile dark u2">
-                            <p class="label"><i class="bi bi-grid-3x3-gap-fill"></i>Puzzles solved</p>
-                            <p class="value value-xl">67</p>
-                            <p class="sub mb-2">Classic Mode</p>
-                            <span class="pill">Hard 67</span>
-                            <span class="pill">Hard 66</span>
-                            <span class="pill">Hard 65</span>
-                            <span class="pill">Hard 64</span>
+            <div class="col-12 col-xl-6 order-first order-xl-0 d-flex">
+                <div class="row g-2 flex-grow-1">
+
+                    <div class="col-12 d-flex">
+                        <div class="tile dark d-flex flex-column w-100">
+                            <div class="row g-2">
+
+                                <!--hero-->
+                                <div class="col-12 col-sm-7 order-first order-sm-last">
+                                    <h1 class="hero-title display-5 text-sm-end">Sudoku<br><span>Statistics</span></h1>
+                                </div>
+
+                                <!--PS-->
+                                <div class="col-12 col-sm-5">
+                                    <p class="label"><i class="bi bi-grid-3x3-gap-fill"></i>Puzzles solved</p>
+                                    <p class="value value-xl">67</p>
+                                    <p class="sub">Classic Mode</p>
+                                </div>
+
+                            </div>
+
+                            <div class="row row-cols-4 g-2 mt-auto">
+                                <div class="col">
+                                    <div class="mini-stat lv-fast">
+                                        <div class="n">22</div>
+                                        <div class="t">Fast</div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="mini-stat lv-hard">
+                                        <div class="n">25</div>
+                                        <div class="t">Hard</div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="mini-stat lv-expert">
+                                        <div class="n">14</div>
+                                        <div class="t">Expert</div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="mini-stat lv-16x16">
+                                        <div class="n">6</div>
+                                        <div class="t">16x16</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                     <!--CL-->
-                    <div class="col-12 col-sm-auto d-flex justify-content-center">
-                        <div class="tile sq u2 p-0">
-                            <div class="row row-cols-3 g-0 h-100">
+                    <div class="col-12 col-sm-5 d-flex">
+                        <div class="tile d-flex flex-column p-0 w-100">
+                            <div class="row row-cols-3 g-0 flex-grow-1">
                                 <div class="col scell"><span class="n">78</span><span class="t">played</span></div>
-                                <div class="col scell"><span class="n">67</span><span class="t">won</span></div>
-                                <div class="col scell"><span class="n">86%</span><span class="t">win rate</span></div>
+                                <div class="col scell"><span class="n">11</span><span class="t">lost</span></div>
+                                <div class="col scell"><span class="n">14h</span><span class="t">play time</span></div>
 
-                                <div class="col scell"><span class="n">13</span><span class="t">streak</span></div>
-                                <div class="col scell center"><span class="n">00:19</span><span class="t">best
-                                        time</span></div>
                                 <div class="col scell"><span class="n">21</span><span class="t">best streak</span></div>
+                                <div class="col scell center"><span class="n">86%</span><span class="t">win rate</span>
+                                </div>
+                                <div class="col scell"><span class="n">34</span><span class="t">hints used</span></div>
 
-                                <div class="col scell"><span class="n">16</span><span class="t">perfect</span></div>
-                                <div class="col scell"><span class="n">02:41</span><span class="t">avg time</span></div>
-                                <div class="col scell"><span class="n">53</span><span class="t">this week</span></div>
+                                <div class="col scell"><span class="n">3</span><span class="t">today</span></div>
+                                <div class="col scell"><span class="n">92%</span><span class="t">accuracy</span></div>
+                                <div class="col scell"><span class="n">12</span><span class="t">daily streak</span>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <!--CR-->
-                    <div class="col col-fit">
-                        <div class="tile u2 d-flex flex-column h-100">
-                            <p class="label mb-2"><i class="bi bi-stopwatch"></i>Best time by level</p>
+                    <div class="col-12 col-sm-7 d-flex">
+                        <div class="tile d-flex flex-column w-100">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <p class="label"><i class="bi bi-stopwatch"></i>Best time by level</p>
+                                <span class="rank r1">TOP 1%</span>
+                            </div>
 
                             <div class="row row-cols-2 g-2 flex-grow-1">
                                 <div class="col">
-                                    <div class="dcell"><span class="t">Fast</span><span class="n">00:19</span></div>
+                                    <div class="dcell lv-fast"><span class="t"><span
+                                                class="legend-dot"></span>Fast</span><span class="n">00:19</span></div>
                                 </div>
                                 <div class="col">
-                                    <div class="dcell"><span class="t">Hard</span><span class="n">01:27</span></div>
+                                    <div class="dcell lv-hard"><span class="t"><span
+                                                class="legend-dot"></span>Hard</span><span class="n">01:27</span></div>
                                 </div>
                                 <div class="col">
-                                    <div class="dcell"><span class="t">Expert</span><span class="n">02:52</span></div>
+                                    <div class="dcell lv-expert"><span class="t"><span
+                                                class="legend-dot"></span>Expert</span><span class="n">02:52</span>
+                                    </div>
                                 </div>
                                 <div class="col">
-                                    <div class="dcell"><span class="t">Extreme</span><span class="n">03:00</span></div>
+                                    <div class="dcell lv-16x16"><span class="t"><span
+                                                class="legend-dot"></span>16x16</span><span class="n">03:00</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--R-->
+            <div class="col-12 col-md-6 col-xl-3 d-flex">
+                <div class="row g-2 flex-grow-1 flex-column flex-nowrap">
+                    <div class="col-12 d-flex flex-grow-1">
+                        <div class="tile d-flex flex-column w-100">
+                            <p class="label"><i class="bi bi-stars"></i>Perfect Wins</p>
+                            <p class="value">16 <span class="sub">/ 67 solved</span></p>
+
+                            <div class="seg my-2">
+                                <span class="lv-fast" style="width:25%"></span>
+                                <span class="lv-hard" style="width:37.5%"></span>
+                                <span class="lv-expert" style="width:25%"></span>
+                                <span class="lv-16x16" style="width:12.5%"></span>
+                            </div>
+
+                            <div class="row g-0 stat-row lv-fast">
+                                <div class="col-6 muted"><span class="legend-dot"></span>Fast</div>
+                                <div class="col-6 text-end num">4</div>
+                            </div>
+                            <div class="row g-0 stat-row lv-hard">
+                                <div class="col-6 muted"><span class="legend-dot"></span>Hard</div>
+                                <div class="col-6 text-end num">6</div>
+                            </div>
+                            <div class="row g-0 stat-row lv-expert">
+                                <div class="col-6 muted"><span class="legend-dot"></span>Expert</div>
+                                <div class="col-6 text-end num">4</div>
+                            </div>
+                            <div class="row g-0 stat-row lv-16x16">
+                                <div class="col-6 muted"><span class="legend-dot"></span>16x16</div>
+                                <div class="col-6 text-end num">2</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="tile">
+                            <p class="label"><i class="bi bi-globe-americas"></i>Battle Passport</p>
+                            <p class="value">48 <span class="sub">countries conquered</span></p>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="tile">
+                            <p class="label"><i class="bi bi-calendar-check"></i>Daily challenge</p>
+                            <p class="value">#1,204 <span class="sub">of 540,680 players</span></p>
+                            <span class="ok"><i class="bi bi-check-circle-fill"></i> Solved today · 01:52</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Bot-->
+            <div class="col-12 col-md-8">
+                <div class="tile d-flex flex-column h-100">
+                    <div class="row g-2 flex-grow-1">
+                        <div class="col-4">
+                            <p class="label"><i class="bi bi-bar-chart-fill"></i>Weekly Activity</p>
+                            <p class="value">53 <span class="sub">games</span></p>
+                        </div>
+                        <div class="col-8">
+                            <div class="row g-1 bars h-100">
+                                <div class="col bar-col">
+                                    <div class="bar-track">
+                                        <div class="bar" style="height:50%"></div>
+                                    </div><span class="bar-day">M</span>
+                                </div>
+                                <div class="col bar-col">
+                                    <div class="bar-track">
+                                        <div class="bar" style="height:75%"></div>
+                                    </div><span class="bar-day">T</span>
+                                </div>
+                                <div class="col bar-col">
+                                    <div class="bar-track">
+                                        <div class="bar" style="height:42%"></div>
+                                    </div><span class="bar-day">W</span>
+                                </div>
+                                <div class="col bar-col">
+                                    <div class="bar-track">
+                                        <div class="bar" style="height:92%"></div>
+                                    </div><span class="bar-day">T</span>
+                                </div>
+                                <div class="col bar-col">
+                                    <div class="bar-track">
+                                        <div class="bar" style="height:67%"></div>
+                                    </div><span class="bar-day">F</span>
+                                </div>
+                                <div class="col bar-col">
+                                    <div class="bar-track">
+                                        <div class="bar hi" style="height:100%"></div>
+                                    </div><span class="bar-day">S</span>
+                                </div>
+                                <div class="col bar-col">
+                                    <div class="bar-track">
+                                        <div class="bar" style="height:17%"></div>
+                                    </div><span class="bar-day">S</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!--R-->
-            <div class="col-12 col-md-6 col-xl-3">
-            <div class="row g-2">
-                <div class="col-12">
-                    <div class="tile u2">
-                        <p class="label"><i class="bi bi-stars"></i>Perfect Wins</p>
-                        <p class="value">16</p>
-                        <div class="row g-0 stat-row mt-2">
-                            <div class="col-6 muted">Hard</div>
-                            <div class="col-6 text-end num">9</div>
-                        </div>
-                        <div class="row g-0 stat-row">
-                            <div class="col-6 muted">Fast</div>
-                            <div class="col-6 text-end num">7</div>
-                        </div>
-                        <div class="row g-0 stat-row">
-                            <div class="col-6 muted">Fast</div>
-                            <div class="col-6 text-end num">7</div>
-                        </div>
-                        <div class="row g-0 stat-row">
-                            <div class="col-6 muted">Fast</div>
-                            <div class="col-6 text-end num">7</div>
-                        </div>
-                        <div class="progress mt-3" style="height: 8px;">
-                            <div class="progress-bar" style="width: 24%;"></div>
+            <div class="col-12 col-md-4">
+                <div class="row g-2 h-100">
+                    <!--best time-->
+                    <div class="col-6">
+                        <div class="tile h-100 d-flex flex-column justify-content-center">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <p class="label"><i class="bi bi-stopwatch"></i>Best time</p>
+                                <span class="rank r1">TOP 1%</span>
+                            </div>
+                            <p class="value">00:19</p>
+                            <p class="sub">Fast</p>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-12">
-                    <div class="tile u1">
-                        <p class="label"><i class="bi bi-trophy-fill"></i>Battle</p>
-                        <p class="value">48 Passport</p>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <div class="tile u1">
-                        <p class="label">Best Badge</p>
-                        <p class="value">58 Wins (June)</p>
+                    <!--best badge-->
+                    <div class="col-6">
+                        <div class="tile h-100 d-flex flex-column justify-content-center">
+                            <p class="label"><i class="bi bi-award-fill"></i>Best Badge</p>
+                            <p class="value">58</p>
+                            <p class="sub">wins · June</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!--Bot-->
-        <div class="col-12 col-md-8">
-            <div class="tile u1">
-                <p class="label">Weekly Activity</p>
-                <p class="value">53 games</p>
-            </div>
-        </div>
-        <div class="col-12 col-md-4">
-            <div class="tile u1">
-                <p class="label"><i class="bi bi-calendar-check"></i>Daily challenge</p>
-                <p class="value">540,680 <span class="sub">players</span></p>
-            </div>
-        </div>
-
-    </div>
     </div>
 </body>
 
