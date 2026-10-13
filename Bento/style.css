@@ -151,6 +151,7 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding: .7rem .25rem;
     border-right: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
 }
