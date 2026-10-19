@@ -1,163 +1,90 @@
 <!doctype html>
-<html lang="en" data-bs-theme="light">
+<html lang="en" data-bs-theme="dark">
 
 <head>
-    <title>Artist</title>
+    <title>Unreal Unearth</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <link href="unreal-unearth.css" rel="stylesheet" />
 </head>
 
 <body>
 
-    <div class="container">
-        <h1 class="text-center my-4">Top Artists</h1>
-        <div class="row" id="parent">
-            <!-- parent -->
+    <div class="container py-5">
+        <div class="row g-5">
+
+            <!-- leftside-->
+            <div class="col-12 col-md-5">
+                <div class="album-side">
+                    <img id="albumImg" class="img-fluid album-img rounded-4" alt="Unreal Unearth">
+                    <h1 class="album-title mt-4" id="albumTitle"></h1>
+                    <p class="text-secondary" id="albumInfo"></p>
+                </div>
+            </div>
+
+            <!-- rightside -->
+            <div class="col-12 col-md-7">
+                <div class="track-header d-flex gap-3 px-3 pb-2 mb-2 text-secondary small text-uppercase">
+                    <div class="track-number text-center flex-shrink-0">#</div>
+                    <div>Title</div>
+                </div>
+                <div id="tracks">
+                    <!-- tracks here -->
+                </div>
+            </div>
+
         </div>
     </div>
-
-    <style>
-        /*-- style heree --*/
-        .artist-img {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-
-        .card {
-            transition: transform 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .song-item {
-            border-bottom: 1px solid #dee2e6;
-            padding: 6px 0;
-        }
-
-        .song-item:last-child {
-            border-bottom: none;
-        }
-    </style>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
     <script>
-        var artist = [
-            {
-                firstName: "Andrew John",
-                lastName: "Hozier-Byrne",
-                age: "36",
-                bday: "March 17, 1990",
-                image: "assets/img/raah.jpg",
-                // isLoggedIn: true,
-                songs: [
-                    {
-                        title: "Take Me to Church",
-                        streams: "3.6 Billion Streams"
-                    },
-                    {
-                        title: "Too Sweet",
-                        streams: "2.1 Billion Streams"
-                    },
-                    {
-                        title: "Work Song",
-                        streams: "1 Billion Streams"
-                    }
-                ]
-            },
-            {
-                firstName: "Andrew John",
-                lastName: "Hozier-Byrne",
-                age: "36",
-                bday: "March 17, 1990",
-                image: "assets/img/raah.jpg",
-                // isLoggedIn: false,
-                songs: [
-                    {
-                        title: "Take Me to Church",
-                        streams: "3.6 Billion Streams"
-                    },
-                    {
-                        title: "Too Sweet",
-                        streams: "2.1 Billion Streams"
-                    },
-                    {
-                        title: "Work Song",
-                        streams: "1 Billion Streams"
-                    }
-                ]
-            },
-            {
-                firstName: "Noah",
-                lastName: "Kahan",
-                age: "29",
-                bday: "January 1, 1997",
-                image: "assets/img/raah.jpg",
-                // isLoggedIn: true,
-                songs: [
-                    {
-                        title: "Stick Season",
-                        streams: "1.9 Billion Streams"
-                    },
-                    {
-                        title: "Northern Attitude",
-                        streams: "749 Million Streams"
-                    },
-                    {
-                        title: "You're Gonna Go Far",
-                        streams: "625 Million Streams"
-                    },
-                ],
-            },
-        ];
+        var album = {
+            title: "Unreal Unearth",
+            artist: "Hozier",
+            year: "2023",
+            image: "assets/img/raah.jpg",
+            tracks: [
+                { number: 1, title: "De Selby (Part 1)" },
+                { number: 2, title: "De Selby (Part 2)" },
+                { number: 3, title: "First Time" },
+                { number: 4, title: "Francesca" },
+                { number: 5, title: "I, Carrion (Icarian)" },
+                { number: 6, title: "Eat Your Young" },
+                { number: 7, title: "Damage Gets Done (feat. Brandi Carlile)" },
+                { number: 8, title: "Who We Are" },
+                { number: 9, title: "Son of Nyx" },
+                { number: 10, title: "All Things End" },
+                { number: 11, title: "To Someone From A Warm Climate (Uiscefhuaraithe)" },
+                { number: 12, title: "Butchered Tongue" },
+                { number: 13, title: "Anything But" },
+                { number: 14, title: "Abstract (Psychopomp)" },
+                { number: 15, title: "Unknown / Nth" },
+                { number: 16, title: "First Light" }
+            ]
+        };
 
-        var elParent = document.getElementById("parent");
-        for (var i = 0; i < artist.length; i++) {
+        // left-side
+        document.getElementById("albumImg").src = album.image;
+        document.getElementById("albumTitle").innerHTML = album.title;
+        document.getElementById("albumInfo").innerHTML = album.artist + " &bull; " + album.year + " &bull; " + album.tracks.length + " songs";
 
-            // loop song
-            var songList = "";
-            for (var j = 0; j < artist[i].songs.length; j++) {
-                songList +=
-                    `<li class="song-item d-flex justify-content-between">
-                        <span class="fw-semibold">` + artist[i].songs[j].title + `</span>
-                        <span class="text-muted small">` + artist[i].songs[j].streams + `</span>
-                    </li>`;
-            }
-
-            elParent.innerHTML +=
-                `<div class="col-12 col-md-6 col-lg-4">
-                <div class="card p-3 my-3 shadow rounded-4">
-                    <div class="d-flex align-items-center gap-3">
-                        <img src="` + artist[i].image + `" class="artist-img" alt="` + artist[i].firstName + `">
-                        <div>
-                            <div class="h3" id="artist-` + i + `">` + artist[i].firstName + " " + artist[i].lastName + `</div>
-                        </div>
+        // right-side
+        var elTracks = document.getElementById("tracks");
+        for (var i = 0; i < album.tracks.length; i++) {
+            elTracks.innerHTML +=
+                `<div class="track-row d-flex align-items-center gap-3 rounded-3 px-3 py-2">
+                    <div class="track-number text-secondary text-center flex-shrink-0">` + album.tracks[i].number + `</div>
+                    <div>
+                        <div class="track-title fw-semibold">` + album.tracks[i].title + `</div>
+                        <div class="text-secondary small">` + album.artist + `</div>
                     </div>
-
-                    <div class="mt-3">
-                        <div><strong>Age:</strong> ` + artist[i].age + `</div>
-                        <div><strong>Birthday:</strong> ` + artist[i].bday + `</div>
-                    </div>
-
-                    <div class="mt-3 h5">Top Songs</div>
-                    <ul class="list-unstyled mb-0">` + songList + `</ul>
-
-                    <div class="mt-3 text-muted small">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse ad rerum est distinctio deleniti
-                        accusantium tenetur in!
-                    </div>
-                </div>
-            </div>`;
+                </div>`;
         }
-
     </script>
 </body>
 

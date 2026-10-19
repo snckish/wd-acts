@@ -1,0 +1,43 @@
+body {
+    background: linear-gradient(180deg, #1c1917 0%, #0f0f0f 60%);
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+/* leftside */
+.album-img {
+    width: 100%;
+    max-width: 380px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+.album-title {
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.album-side {
+    position: sticky;
+    top: 2rem;
+}
+
+/* tracklist */
+.track-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    letter-spacing: 0.08em;
+}
+
+.track-row {
+    cursor: pointer;
+    transition: background-color 0.15s;
+}
+
+.track-row:hover {
+    background-color: rgba(255, 255, 255, 0.07);
+}
+
+.track-number {
+    width: 32px;
+}
