@@ -8,7 +8,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
-    <link href="unreal-unearth.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -19,8 +19,8 @@
             <!-- leftside-->
             <div class="col-12 col-md-5">
                 <div class="album-side">
-                    <img id="albumImg" class="img-fluid album-img rounded-4" alt="Unreal Unearth">
-                    <h1 class="album-title mt-4" id="albumTitle"></h1>
+                    <img id="unrealUnearthImg" class="img-fluid album-img rounded-4" alt="Unreal Unearth">
+                    <h1 class="album-title mt-4" id="unrealUnearth"></h1>
                     <p class="text-secondary" id="albumInfo"></p>
                 </div>
             </div>
@@ -47,7 +47,7 @@
             title: "Unreal Unearth",
             artist: "Hozier",
             year: "2023",
-            image: "assets/img/raah.jpg",
+            image: "assets/img/unreal_unearth.jpg",
             tracks: [
                 { number: 1, title: "De Selby (Part 1)" },
                 { number: 2, title: "De Selby (Part 2)" },
@@ -69,8 +69,8 @@
         };
 
         // left-side
-        document.getElementById("albumImg").src = album.image;
-        document.getElementById("albumTitle").innerHTML = album.title;
+        document.getElementById("unrealUnearthImg").src = album.image;
+        document.getElementById("unrealUnearth").innerHTML = album.title;
         document.getElementById("albumInfo").innerHTML = album.artist + " &bull; " + album.year + " &bull; " + album.tracks.length + " songs";
 
         // right-side
