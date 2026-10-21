@@ -2,89 +2,108 @@
 <html lang="en" data-bs-theme="dark">
 
 <head>
-    <title>Unreal Unearth</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hozier | Unreal Unearth</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
-    <link href="style.css" rel="stylesheet" />
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
-    <div class="container py-5">
-        <div class="row g-5">
-
-            <!-- leftside-->
-            <div class="col-12 col-md-5">
-                <div class="album-side">
-                    <img id="unrealUnearthImg" class="img-fluid album-img rounded-4" alt="Unreal Unearth">
-                    <h1 class="album-title mt-4" id="unrealUnearth"></h1>
-                    <p class="text-secondary" id="albumInfo"></p>
+    <!--Hero-->
+    <header class="hero-section d-flex align-items-end">
+        <div class="container-xxl hero-inner pb-5">
+            <div class="row">
+                <div class="col-12 col-md-6 offset-md-6">
+                    <p class="hero-artist mb-2" id="hero-artist"></p>
+                    <h1 class="hero-title mb-4" id="hero-title"></h1>
+                    <a href="#tracks" class="btn hero-btn" id="hero-btn"></a>
                 </div>
             </div>
-
-            <!-- rightside -->
-            <div class="col-12 col-md-7">
-                <div class="track-header d-flex gap-3 px-3 pb-2 mb-2 text-secondary small text-uppercase">
-                    <div class="track-number text-center flex-shrink-0">#</div>
-                    <div>Title</div>
-                </div>
-                <div id="tracks">
-                    <!-- tracks here -->
-                </div>
-            </div>
-
         </div>
-    </div>
+    </header>
+
+    <!--Songs-->
+    <main class="container-xxl track-main px-4 py-5" id="tracks">
+        <div id="track-list"></div>
+    </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
+
     <script>
         var album = {
             title: "Unreal Unearth",
             artist: "Hozier",
             year: "2023",
+            color: "#d4a373",
             image: "assets/img/unreal_unearth.jpg",
             tracks: [
-                { number: 1, title: "De Selby (Part 1)" },
-                { number: 2, title: "De Selby (Part 2)" },
-                { number: 3, title: "First Time" },
-                { number: 4, title: "Francesca" },
-                { number: 5, title: "I, Carrion (Icarian)" },
-                { number: 6, title: "Eat Your Young" },
-                { number: 7, title: "Damage Gets Done (feat. Brandi Carlile)" },
-                { number: 8, title: "Who We Are" },
-                { number: 9, title: "Son of Nyx" },
-                { number: 10, title: "All Things End" },
-                { number: 11, title: "To Someone From A Warm Climate (Uiscefhuaraithe)" },
-                { number: 12, title: "Butchered Tongue" },
-                { number: 13, title: "Anything But" },
-                { number: 14, title: "Abstract (Psychopomp)" },
-                { number: 15, title: "Unknown / Nth" },
-                { number: 16, title: "First Light" }
+                { number: 1, title: "De Selby (Part 1)", spotifyId: "6v9nSUSbhWwxsNcJgMURt6", lyricsUrl: "https://genius.com/Hozier-francesca-lyrics", tags: ["folk", "slow burn"], note: "Lorem ipsum dolor sit amet." },
+                { number: 2, title: "De Selby (Part 2)", spotifyId: "6v9nSUSbhWwxsNcJgMURt6", lyricsUrl: "https://genius.com/Hozier-francesca-lyrics", tags: ["folk", "dark"], note: "Lorem ipsum dolor sit amet." },
+                { number: 3, title: "First Time", spotifyId: "6v9nSUSbhWwxsNcJgMURt6", lyricsUrl: "https://genius.com/Hozier-francesca-lyrics", tags: ["indie", "love"], note: "Lorem ipsum dolor sit amet." },
+                { number: 4, title: "Francesca", spotifyId: "6v9nSUSbhWwxsNcJgMURt6", lyricsUrl: "https://genius.com/Hozier-francesca-lyrics", tags: ["love", "soulful"], note: "Lorem ipsum dolor sit amet." },
+                { number: 5, title: "I, Carrion (Icarian)", spotifyId: "6v9nSUSbhWwxsNcJgMURt6", lyricsUrl: "https://genius.com/Hozier-francesca-lyrics", tags: ["myth", "rock"], note: "Lorem ipsum dolor sit amet." },
+                { number: 6, title: "Eat Your Young", spotifyId: "6v9nSUSbhWwxsNcJgMURt6", lyricsUrl: "https://genius.com/Hozier-francesca-lyrics", tags: ["dark", "groove"], note: "Lorem ipsum dolor sit amet." },
+                { number: 7, title: "Damage Gets Done (feat. Brandi Carlile)", spotifyId: "6v9nSUSbhWwxsNcJgMURt6", lyricsUrl: "https://genius.com/Hozier-francesca-lyrics", tags: ["duet", "folk"], note: "Lorem ipsum dolor sit amet." },
+                { number: 8, title: "Who We Are", spotifyId: "6v9nSUSbhWwxsNcJgMURt6", lyricsUrl: "https://genius.com/Hozier-francesca-lyrics", tags: ["anthem", "indie"], note: "Lorem ipsum dolor sit amet." },
+                { number: 9, title: "Son of Nyx", spotifyId: "6v9nSUSbhWwxsNcJgMURt6", lyricsUrl: "https://genius.com/Hozier-francesca-lyrics", tags: ["myth", "atmospheric"], note: "Lorem ipsum dolor sit amet." },
+                { number: 10, title: "All Things End", spotifyId: "6v9nSUSbhWwxsNcJgMURt6", lyricsUrl: "https://genius.com/Hozier-francesca-lyrics", tags: ["slow", "reflective"], note: "Lorem ipsum dolor sit amet." },
+                { number: 11, title: "To Someone From A Warm Climate (Uiscefhuaraithe)", spotifyId: "6v9nSUSbhWwxsNcJgMURt6", lyricsUrl: "https://genius.com/Hozier-francesca-lyrics", tags: ["love", "irish"], note: "Lorem ipsum dolor sit amet." },
+                { number: 12, title: "Butchered Tongue", spotifyId: "6v9nSUSbhWwxsNcJgMURt6", lyricsUrl: "https://genius.com/Hozier-francesca-lyrics", tags: ["folk", "history"], note: "Lorem ipsum dolor sit amet." },
+                { number: 13, title: "Anything But", spotifyId: "6v9nSUSbhWwxsNcJgMURt6", lyricsUrl: "https://genius.com/Hozier-francesca-lyrics", tags: ["soulful", "love"], note: "Lorem ipsum dolor sit amet." },
+                { number: 14, title: "Abstract (Psychopomp)", spotifyId: "6v9nSUSbhWwxsNcJgMURt6", lyricsUrl: "https://genius.com/Hozier-francesca-lyrics", tags: ["myth", "dark"], note: "Lorem ipsum dolor sit amet." },
+                { number: 15, title: "Unknown / Nth", spotifyId: "6v9nSUSbhWwxsNcJgMURt6", lyricsUrl: "https://genius.com/Hozier-francesca-lyrics", tags: ["rock", "intense"], note: "Lorem ipsum dolor sit amet." },
+                { number: 16, title: "First Light", spotifyId: "6v9nSUSbhWwxsNcJgMURt6", lyricsUrl: "https://genius.com/Hozier-francesca-lyrics", tags: ["hopeful", "closer"], note: "Lorem ipsum dolor sit amet." }
             ]
         };
 
-        // left-side
-        document.getElementById("unrealUnearthImg").src = album.image;
-        document.getElementById("unrealUnearth").innerHTML = album.title;
-        document.getElementById("albumInfo").innerHTML = album.artist + " &bull; " + album.year + " &bull; " + album.tracks.length + " songs";
+        document.getElementById("hero-title").textContent = album.title;
+        document.getElementById("hero-artist").textContent = album.artist + ", " + album.year;
+        document.getElementById("hero-btn").textContent = "Listen to all " + album.tracks.length + " songs";
+        document.documentElement.style.setProperty("--accent", album.color);
 
-        // right-side
-        var elTracks = document.getElementById("tracks");
+        var list = document.getElementById("track-list");
+        var html = "";
+
         for (var i = 0; i < album.tracks.length; i++) {
-            elTracks.innerHTML +=
-                `<div class="track-row d-flex align-items-center gap-3 rounded-3 px-3 py-2">
-                    <div class="track-number text-secondary text-center flex-shrink-0">` + album.tracks[i].number + `</div>
-                    <div>
-                        <div class="track-title fw-semibold">` + album.tracks[i].title + `</div>
-                        <div class="text-secondary small">` + album.artist + `</div>
-                    </div>
-                </div>`;
+            var t = album.tracks[i];
+
+            var noteHtml = t.note ? `<p class="track-note">` + t.note + `</p>` : ``;
+
+            // lyrics URL
+            var lyricsHtml = t.lyricsUrl
+                ? `<a href="` + t.lyricsUrl + `" target="_blank" rel="noopener" class="lyrics-link">View lyrics</a>`
+                : `<span class="lyrics-link disabled" aria-disabled="true">View lyrics</span>`;
+
+            // spotify ID
+            var playerHtml = t.spotifyId
+                ? `<iframe class="track-embed" style="border-radius:12px"
+            src="https://open.spotify.com/embed/track/` + t.spotifyId + `?theme=0"
+            width="100%" height="152" frameBorder="0"
+            title="` + t.title + `"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"></iframe>`
+                : ``;
+
+            html += `
+  <div class="track-row row align-items-center g-4">
+    <div class="col-12 col-md-5">
+      <div class="track-num">` + t.number + `</div>
+      <h2 class="track-name">` + t.title + `</h2>
+      ` + noteHtml + `
+      ` + lyricsHtml + `
+    </div>
+    <div class="col-12 col-md-7">` + playerHtml + `</div>
+  </div>`;
         }
+
+        list.innerHTML = html;
     </script>
 </body>
 

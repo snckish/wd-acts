@@ -1,43 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --accent: #d4a373;
+    --display-font: "IM Fell English", "Times New Roman", serif;
+}
+
 body {
-    background: linear-gradient(180deg, #1c1917 0%, #0f0f0f 60%);
+    background: linear-gradient(to top, #353535, #000000);
     background-attachment: fixed;
-    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
 }
 
-/* leftside */
-.album-img {
-    width: 100%;
-    max-width: 380px;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+html {
+    scroll-behavior: smooth;
 }
 
-.album-title {
-    font-weight: 800;
-    letter-spacing: -0.02em;
+/* hero-sect */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    height: 100svh;
+    color: #ffffff;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 55%, #000000 100%), url("assets/img/bg2.png");
+    background-size: cover;
+    background-position: 30% center;
+    background-repeat: no-repeat;
 }
 
-.album-side {
-    position: sticky;
-    top: 2rem;
+.hero-inner {
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
-/* tracklist */
-.track-header {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    letter-spacing: 0.08em;
+.hero-artist {
+    font-size: 1.1rem;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    opacity: 0.85;
+}
+
+.hero-title {
+    font-family: var(--display-font);
+    font-size: clamp(3.2rem, 11vw, 9rem);
+    font-weight: normal;
+    line-height: 0.95;
+    letter-spacing: 0;
+}
+
+.hero-btn {
+    background-color: var(--accent);
+    border: 0;
+    border-radius: 999px;
+    color: #1a1a1a;
+    font-weight: 600;
+    padding: 0.7rem 1.6rem;
+    transition: filter 0.2s;
+}
+
+.hero-btn:hover {
+    background-color: var(--accent);
+    color: #1a1a1a;
+    filter: brightness(1.12);
+}
+
+.hero-btn:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
+}
+
+.hero-inner {
+    animation: hero-in 1s ease-out both;
+}
+
+@keyframes hero-in {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+html {
+    scroll-behavior: auto;
+}
+
+.hero-inner {
+    animation: none;
+}
+
+/* song-rows */
+.track-main {
+    max-width: 1200px;
 }
 
 .track-row {
-    cursor: pointer;
-    transition: background-color 0.15s;
+    padding: 2.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.track-row:hover {
-    background-color: rgba(255, 255, 255, 0.07);
+.track-row:last-child {
+    border-bottom: 0;
 }
 
-.track-number {
-    width: 32px;
+.track-num {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 0.25rem;
+}
+
+.track-name {
+    font-family: var(--display-font);
+    font-size: 2.2rem;
+    font-weight: normal;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.track-note {
+    font-family: var(--display-font);
+    font-size: 1.25rem;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.6;
+    padding-left: 1rem;
+    border-left: 3px solid var(--accent);
+    margin-bottom: 1.25rem;
+    opacity: 0.9;
+}
+
+.lyrics-link {
+    display: inline-block;
+    color: #ffffff;
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-underline-offset: 6px;
+    text-decoration-thickness: 2px;
+}
+
+a.lyrics-link:hover {
+    color: var(--accent);
+}
+
+.lyrics-link.disabled {
+    opacity: 0.35;
+    text-decoration: none;
+    cursor: not-allowed;
+}
+
+.track-embed {
+    display: block;
+    width: 100%;
+    border: 0;
 }
