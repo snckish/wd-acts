@@ -119,31 +119,6 @@ body {
     background: #7a4fd6;
 }
 
-/*--vicodin
-.pill {
-    display: inline-block;
-    font-size: .8rem;
-    padding: .15rem .6rem;
-    margin: 0 .25rem .25rem 0;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, .12);
-}--*/
-
-/*--p-bar
-.progress {
-    background: var(--line);
-}
-
-.progress-bar {
-    background: var(--blue);
-}--*/
-
-/*--weekly-unused
-.bar {
-    background: var(--blue);
-    border-radius: 4px;
-}--*/
-
 /*--cell-- */
 .scell {
     display: flex;
@@ -360,7 +335,6 @@ body {
     display: flex;
     align-items: center;
     background: #13171b;
-    /* matches the image's dark background */
 }
 
 .s-pfp {
