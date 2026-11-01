@@ -5,15 +5,103 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Midlife Crisis</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
 <body>
-    <h1>No hello</h1>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL"
+    <div class="container-fluid p-4 bg-primary">
+        <div class="row">
+            <div class="col">
+                <div class="h3 text-center text-white">
+                    Bokbokbok
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col">
+                <div class="card rounded-5 p-5">
+                    <div class="d-flex flex-row">
+                        <input type="text" class="form-control rounded-start-pill" placeholder="Enter Book Title"
+                            id="searchInput">
+                        <div class="btn btn-primary rounded-end-pill" onclick="getBook()">Search</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col">
+                <div class="card shadow rounded-5 p-5 text-center">
+
+                    <div id="imageContainer" class="mx-auto rounded-3" style="width: 200px; height: 300px;">
+                        <img src="" style="width: 100%;" class="rounded-3" id="image">
+                    </div>
+
+                    <div class="h3 my-3" id="name">
+                        <div class="spinner-border" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+
+                    <div class="text-muted mb-2" id="author"></div>
+
+                    <div>
+                        <span class="rounded-5 px-4 py-1" id="type"></span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
+    <script>
+        function capitalizeFirstLetter(str) {
+            if (!str) return str;
+            return str.charAt(0).toUpperCase() + str.slice(1);
+        }
+
+        var elName = document.getElementById("name");
+        var elImage = document.getElementById("image");
+        var elAuthor = document.getElementById("author");
+        var elType = document.getElementById("type");
+        var elImageContainer = document.getElementById("imageContainer");
+
+        var inSearchInput = document.getElementById("searchInput");
+
+        const getBook = async () => {
+            elName.innerHTML = "Loading " + inSearchInput.value;
+            elImage.src = "";
+            elAuthor.innerHTML = "";
+            elType.innerHTML = "";
+
+            const response = await fetch('https://openlibrary.org/search.json?limit=1&fields=title,author_name,cover_i,subject&q=' + inSearchInput.value);
+            const data = await response.json();
+
+            const book = data.docs[0];
+
+            var subject = book.subject[0];
+
+            elName.innerHTML = capitalizeFirstLetter(book.title);
+            elAuthor.innerHTML = book.author_name[0];
+            if (book.cover_i) {
+                elImage.src = 'https://covers.openlibrary.org/b/id/' + book.cover_i + '-L.jpg';
+            } else {
+                elImage.src = 'https://placehold.co/200x300?text=No+Cover';
+            }
+            elType.innerHTML = subject;
+            elImageContainer.style.backgroundColor = "white";
+            elType.style.backgroundColor = "white";
+        }
+    </script>
 </body>
 
 </html>
