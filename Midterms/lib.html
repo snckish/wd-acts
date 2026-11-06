@@ -8,7 +8,8 @@
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;500;600&display=swap"
+    rel="stylesheet">
 </head>
 
 <body style="background-color: #0E1512; font-family: 'Literata', Georgia, serif;">
@@ -24,29 +25,41 @@
           <p class="text-secondary mb-4">Browse the shelves or search for a book</p>
 
           <div class="d-flex flex-row" style="max-width: 420px;">
-            <input type="text" class="form-control rounded-end-0" style="background-color: #0E1512; border-color: #263229;" placeholder="Enter book title" id="searchInput" aria-label="Book title">
+            <input type="text" class="form-control rounded-end-0"
+              style="background-color: #0E1512; border-color: #263229;" placeholder="Enter book title" id="searchInput"
+              aria-label="Book title">
             <button type="button" class="btn btn-success rounded-start-0" onclick="searchBooks()">Search</button>
           </div>
 
           <div class="mt-3">
-            <button type="button" class="btn btn-outline-secondary btn-sm me-1 mb-1" style="color: #C9D6CC; border-color: #4A5A50;" onclick="searchSubject('fantasy')">Fantasy</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm me-1 mb-1" style="color: #C9D6CC; border-color: #4A5A50;" onclick="searchSubject('mystery')">Mystery</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm me-1 mb-1" style="color: #C9D6CC; border-color: #4A5A50;" onclick="searchSubject('science fiction')">Science fiction</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm me-1 mb-1" style="color: #C9D6CC; border-color: #4A5A50;" onclick="searchSubject('romance')">Romance</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm me-1 mb-1" style="color: #C9D6CC; border-color: #4A5A50;" onclick="searchSubject('history')">History</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm me-1 mb-1"
+              style="color: #C9D6CC; border-color: #4A5A50;" onclick="searchSubject('fantasy')">Fantasy</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm me-1 mb-1"
+              style="color: #C9D6CC; border-color: #4A5A50;" onclick="searchSubject('mystery')">Mystery</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm me-1 mb-1"
+              style="color: #C9D6CC; border-color: #4A5A50;" onclick="searchSubject('science fiction')">Science
+              fiction</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm me-1 mb-1"
+              style="color: #C9D6CC; border-color: #4A5A50;" onclick="searchSubject('romance')">Romance</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm me-1 mb-1"
+              style="color: #C9D6CC; border-color: #4A5A50;" onclick="searchSubject('history')">History</button>
           </div>
         </div>
 
         <a href="#books" class="text-decoration-none" style="color: #52B788;">Browse books</a>
       </div>
 
-      <div style="flex: 7 1 380px; min-height: 50vh; background-image: linear-gradient(to right, #151E19 0%, rgba(21, 30, 25, .65) 20%, rgba(21, 30, 25, 0) 55%), linear-gradient(rgba(14, 21, 18, .3), rgba(14, 21, 18, .3)), url('assets/l.jpg'); background-size: cover; background-position: center;"></div>
+      <div
+        style="flex: 7 1 380px; min-height: 50vh; background-image: linear-gradient(to right, #151E19 0%, rgba(21, 30, 25, .65) 20%, rgba(21, 30, 25, 0) 55%), linear-gradient(rgba(14, 21, 18, .3), rgba(14, 21, 18, .3)), url('assets/l.jpg'); background-size: cover; background-position: center;">
+      </div>
     </div>
   </div>
 
   <div class="container py-5" id="books">
     <div class="h3 fw-semibold mb-3" id="listTitle">Fantasy Books</div>
-    <div id="parent" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(max(190px, calc((100% - 4.5rem) / 4 - 1px)), 1fr)); gap: 1.5rem;"></div>
+    <div id="parent"
+      style="display: grid; grid-template-columns: repeat(auto-fill, minmax(max(190px, calc((100% - 4.5rem) / 4 - 1px)), 1fr)); gap: 1.5rem;">
+    </div>
 
     <nav class="mt-4" aria-label="Page navigation">
       <ul class="pagination justify-content-center">
